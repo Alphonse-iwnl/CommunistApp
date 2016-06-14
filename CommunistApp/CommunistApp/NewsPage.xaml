@@ -1,0 +1,169 @@
+﻿<Page
+    x:Class="CommunistApp.NewsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CommunistApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot>
+            <PivotItem >
+                <PivotItem.Header>
+                    <TextBlock Text="通知公告"></TextBlock>
+                </PivotItem.Header>
+                <ListView Name="NewsList" IsItemClickEnabled="True" ItemClick="NewsList_ItemClick">
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <!--标题-->
+                                    <TextBlock Grid.Row="0" Text="{Binding}"/>
+                                    <!--内容概要-->
+                                    <TextBlock Grid.Row="1"/>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition /><!--空-->
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <!--阅读数-->
+                                    <TextBlock Grid.Row="1"/>
+                                    <!--日期-->
+                                    <TextBlock Grid.Row="2"/>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </PivotItem>
+            <PivotItem >
+                <PivotItem.Header>
+                    <TextBlock Text="工作动态"></TextBlock>
+                </PivotItem.Header>
+                <ListView Name="WorkList" IsItemClickEnabled="True" ItemClick="WorkList_ItemClick">
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <!--标题-->
+                                    <TextBlock Grid.Row="0" Text="{Binding}"/>
+                                    <!--内容概要-->
+                                    <TextBlock Grid.Row="1"/>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <!--空-->
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <!--阅读数-->
+                                    <TextBlock Grid.Row="1"/>
+                                    <!--日期-->
+                                    <TextBlock Grid.Row="2"/>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </PivotItem>
+            <PivotItem >
+                <PivotItem.Header>
+                    <TextBlock Text="基层行动"></TextBlock>
+                </PivotItem.Header>
+                <ListView Name="MoveList" IsItemClickEnabled="True" ItemClick="MoveList_ItemClick">
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <!--标题-->
+                                    <TextBlock Grid.Row="0" Text="{Binding}"/>
+                                    <!--内容概要-->
+                                    <TextBlock Grid.Row="1"/>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <!--空-->
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <!--阅读数-->
+                                    <TextBlock Grid.Row="1"/>
+                                    <!--日期-->
+                                    <TextBlock Grid.Row="2"/>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </PivotItem>
+            <PivotItem >
+                <PivotItem.Header>
+                    <TextBlock Text="学习资料"></TextBlock>
+                </PivotItem.Header>
+                <ListView Name="StudyList" IsItemClickEnabled="True" ItemClick="StudyList_ItemClick">
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="3*"/>
+                                    </Grid.RowDefinitions>
+                                    <!--标题-->
+                                    <TextBlock Grid.Row="0" Text="{Binding}"/>
+                                    <!--内容概要-->
+                                    <TextBlock Grid.Row="1"/>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <!--空-->
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <!--阅读数-->
+                                    <TextBlock Grid.Row="1"/>
+                                    <!--日期-->
+                                    <TextBlock Grid.Row="2"/>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>
