@@ -9,11 +9,12 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions >
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition />
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="AliceBlue" BorderThickness="0">
-            <TextBlock Text="学习心得分享" FontFamily="Microsoft YaHei UI" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"/>
+        <Grid Grid.Row="0" Background="Crimson" BorderThickness="0" Margin="0,0,0,-50">
+            <TextBlock Text="学习心得分享" Foreground="Azure"
+                       FontFamily="Microsoft YaHei UI" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"/>
         </Grid>
         <Grid Grid.Row="1">
             <ListView >
