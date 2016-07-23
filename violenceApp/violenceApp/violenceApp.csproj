@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{BAFA4410-C9A9-4322-80DD-7E6188B1F20B}</ProjectGuid>
+    <ProjectGuid>{b41f0ff0-a126-463e-addf-1b41da6af055}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CommunistApp</RootNamespace>
-    <AssemblyName>CommunistApp</AssemblyName>
+    <RootNamespace>violenceApp</RootNamespace>
+    <AssemblyName>violenceApp</AssemblyName>
     <DefaultLanguage>zh-CN</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
@@ -16,7 +16,9 @@
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>CommunistApp_TemporaryKey.pfx</PackageCertificateKeyFile>
+    
+    <PackageCertificateKeyFile>violenceApp_TemporaryKey.pfx</PackageCertificateKeyFile>
+    
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -95,49 +97,20 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CommunityContentPage.xaml.cs">
-      <DependentUpon>CommunityContentPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CommunityPage.xaml.cs">
-      <DependentUpon>CommunityPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\NotifyPopup.xaml.cs">
-      <DependentUpon>NotifyPopup.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Converter\HomeGridViewItemConverter.cs" />
-    <Compile Include="HomePage.xaml.cs">
-      <DependentUpon>HomePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NetWork.cs" />
-    <Compile Include="NewsContentPage.xaml.cs">
-      <DependentUpon>NewsContentPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NewsPage.xaml.cs">
-      <DependentUpon>NewsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PersonalPage.xaml.cs">
-      <DependentUpon>PersonalPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="CommunistApp_TemporaryKey.pfx" />
+    
+    <None Include="violenceApp_TemporaryKey.pfx" />
+    
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\banner.png" />
-    <Content Include="Assets\ItemPic\1.png" />
-    <Content Include="Assets\ItemPic\2.png" />
-    <Content Include="Assets\ItemPic\3.png" />
-    <Content Include="Assets\ItemPic\4.png" />
-    <Content Include="Assets\ItemPic\5.png" />
-    <Content Include="Assets\ItemPic\6.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -152,47 +125,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="CommunityContentPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CommunityPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\NotifyPopup.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="HomePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="NewsContentPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="NewsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PersonalPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
-  <ItemGroup>
-    <SDKReference Include="WindowsMobile, Version=10.0.10586.0">
-      <Name>Windows Mobile Extensions for the UWP</Name>
-    </SDKReference>
-  </ItemGroup>
+  
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
+
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

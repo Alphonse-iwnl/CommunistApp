@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -27,7 +29,32 @@ namespace CommunistApp
         {
             this.InitializeComponent();
             contentFrame.Navigate(typeof(HomePage));
+            this.SizeChanged += (s, e) =>
+            {
+                var state = "VisualState000";
+                if (e.NewSize.Width > 550)
+                {
+                    state = "VisualState550";
+                }
+                VisualStateManager.GoToState(this, state, true);
+            };
+            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+            {
+                Utils.ShowSystemTrayAsync(Color.FromArgb(255, 247, 59, 53), Colors.White);
+            }
+            else
+            {
+                var view = ApplicationView.GetForCurrentView();
+                view.TitleBar.BackgroundColor = Color.FromArgb(255, 247, 59, 53);
+                view.TitleBar.ButtonBackgroundColor = Color.FromArgb(255, 247, 59, 53);
+                view.TitleBar.ButtonHoverBackgroundColor = Color.FromArgb(255, 234, 53, 48);
+                view.TitleBar.ButtonPressedBackgroundColor = Color.FromArgb(255, 206, 47, 42);
+            }
+
+            LeftButtonGrid.Background = new SolidColorBrush(Color.FromArgb(255, 243, 243, 245));
         }
+
+
         //忘了咋用blend 暂时这么着吧
         //Panel_Tap后类似于切换状态
         void CanelColorEvent()
@@ -40,37 +67,46 @@ namespace CommunistApp
             CommunityPageWord.Foreground = new SolidColorBrush(Colors.DarkGray);
             PersonalPageIcon.Foreground = new SolidColorBrush(Colors.DarkGray);
             PersonalPageWord.Foreground = new SolidColorBrush(Colors.DarkGray);
+
+            LMainPageIcon.Foreground = new SolidColorBrush(Colors.DarkGray);
+            LNewsPageIcon.Foreground = new SolidColorBrush(Colors.DarkGray);
+            LCommunityPageIcon.Foreground = new SolidColorBrush(Colors.DarkGray);
+            LPersonalPageIcon.Foreground = new SolidColorBrush(Colors.DarkGray);
         }
 
         private void MainPagePanel_Tapped(object sender, TappedRoutedEventArgs e)
         {
             CanelColorEvent();
-            MainPageIcon.Foreground = new SolidColorBrush(Colors.Black);
-            MainPageWord.Foreground = new SolidColorBrush(Colors.Black);
+            MainPageIcon.Foreground = new SolidColorBrush(Color.FromArgb(255, 249, 98, 89));
+            LMainPageIcon.Foreground = new SolidColorBrush(Color.FromArgb(255, 249, 98, 89));
+            MainPageWord.Foreground = new SolidColorBrush(Color.FromArgb(255, 249, 98, 89));
             contentFrame.Navigate(typeof(HomePage));
         }
 
         private void NewsPagePanel_Tapped(object sender, TappedRoutedEventArgs e)
         {
             CanelColorEvent();
-            NewsPageIcon.Foreground = new SolidColorBrush(Colors.Black);
-            NewsPageWord.Foreground = new SolidColorBrush(Colors.Black);
+            NewsPageIcon.Foreground = new SolidColorBrush(Color.FromArgb(255, 249, 98, 89));
+            LNewsPageIcon.Foreground = new SolidColorBrush(Color.FromArgb(255, 249, 98, 89));
+            NewsPageWord.Foreground = new SolidColorBrush(Color.FromArgb(255, 249, 98, 89));
             contentFrame.Navigate(typeof(NewsPage));
         }
 
         private void CommunityPagePanel_Tapped(object sender, TappedRoutedEventArgs e)
         {
             CanelColorEvent();
-            CommunityPageIcon.Foreground = new SolidColorBrush(Colors.Black);
-            CommunityPageWord.Foreground = new SolidColorBrush(Colors.Black);
+            CommunityPageIcon.Foreground = new SolidColorBrush(Color.FromArgb(255, 249, 98, 89));
+            LCommunityPageIcon.Foreground = new SolidColorBrush(Color.FromArgb(255, 249, 98, 89));
+            CommunityPageWord.Foreground = new SolidColorBrush(Color.FromArgb(255, 249, 98, 89));
             contentFrame.Navigate(typeof(CommunityPage));
         }
 
         private void PersonalPagePanel_Tapped(object sender, TappedRoutedEventArgs e)
         {
             CanelColorEvent();
-            PersonalPageIcon.Foreground = new SolidColorBrush(Colors.Black);
-            PersonalPageWord.Foreground = new SolidColorBrush(Colors.Black);
+            PersonalPageIcon.Foreground = new SolidColorBrush(Color.FromArgb(255, 249, 98, 89));
+            LPersonalPageIcon.Foreground = new SolidColorBrush(Color.FromArgb(255, 249, 98, 89));
+            PersonalPageWord.Foreground = new SolidColorBrush(Color.FromArgb(255, 249, 98, 89));
             contentFrame.Navigate(typeof(PersonalPage));
         }
     }
